@@ -1,2 +1,4 @@
 import { Form } from "./Form/Form";
-export { Form };
+import { Header } from "./Header/Header";
+
+export { Form, Header };

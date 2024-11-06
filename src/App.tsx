@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Form } from "./components";
+import { Header } from "./components";
 
 function App() {
-  return <Form></Form>;
+  return <Header></Header>;
 }
 
 export default App;
