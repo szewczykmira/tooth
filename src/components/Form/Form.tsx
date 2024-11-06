@@ -1,3 +1,5 @@
+import React from "react";
+
 export const Form = () => {
-    return <div>Tada</div>
-}
+  return <div>Tada</div>;
+};

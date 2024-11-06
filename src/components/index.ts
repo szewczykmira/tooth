@@ -1,2 +1,2 @@
-import {Form} from './Form/Form';
-export {Form}
+import { Form } from "./Form/Form";
+export { Form };
