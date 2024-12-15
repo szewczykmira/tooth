@@ -1,11 +1,12 @@
 import React from "react";
+import { fileProcessor } from "../../utils/fileProcessor";
 
 export const Form = () => {
   const processFile = (event: React.FormEvent) => {
     event.preventDefault();
     // @ts-expect-error blah?
     const formData = new FormData(event.target);
-    console.log(formData.get("fsl-data"));
+    fileProcessor(formData.get("fsl-data") as File | null);
   };
   return (
     <div className="m-2 text-center">
