@@ -1,13 +1,18 @@
 import React from "react";
 import { fileProcessor } from "../../utils/fileProcessor";
 
-export const Form = () => {
-  const processFile = (event: React.FormEvent) => {
+// @ts-ignore
+export const Form = ({ storeData }) => {
+  const processFile = async (event: React.FormEvent) => {
     event.preventDefault();
     // @ts-expect-error blah?
     const formData = new FormData(event.target);
-    fileProcessor(formData.get("fsl-data") as File | null);
+    const results = await fileProcessor(
+      formData.get("fsl-data") as File | null,
+    );
+    storeData(results);
   };
+
   return (
     <div className="m-2 text-center">
       <h3 className="text-stone-600">
