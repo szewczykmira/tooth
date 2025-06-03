@@ -25,23 +25,28 @@ ChartJS.register(
 
 export const Chart = ({ data }: { data: FSLResult[] }) => {
   const config = {
-    labels: data.map((_data: FSLResult) => _data.date),
+    labels: data.map((_data: FSLResult) => _data.date.toISOString()),
     datasets: [
       {
-        label: "Bop",
+        label: "FreeStyle Libre results",
         data: data.map((_data) => _data.value),
 
-        borderColor: "black",
-        borderWidth: 2,
+        borderColor: "#224411",
+        borderWidth: 1,
       },
     ],
   };
 
-  console.log(config);
+  const options = {
+    responsive: true,
+    elements: {
+      line: { tension: 1 },
+    },
+  };
+
   return (
-    //TODO: fix styling
-    <div style={{ maxHeight: 500 }}>
-      <Line data={config} />
+    <div>
+      <Line data={config} options={options} />
     </div>
   );
 };
